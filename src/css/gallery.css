@@ -1,0 +1,133 @@
+.container-gallery {
+  margin: 0 auto;
+  margin-top: 36px !important;
+  margin-bottom: 100px !important;
+}
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 32px;
+}
+input[name='search-text'] {
+  border: 1px solid #808080;
+  border-radius: 4px;
+  width: 272px;
+  padding: 8px 16px;
+  font-size: 16px;
+  line-height: 1.5em;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+  outline: none;
+}
+input[name='search-text']:hover {
+  border: 1px solid#000;
+}
+input[name='search-text']:focus {
+  border: 1px solid #4e75ff;
+}
+button[type='submit'] {
+  background-color: #4e75ff;
+  width: 91px;
+  height: 40px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 500;
+}
+button[type='submit']:hover {
+  background-color: #6c8cff;
+}
+button[type='submit']:disabled {
+  background-color: #cfcfcf;
+  color: #989898;
+  cursor: default;
+}
+
+input[name='search-text']::placeholder {
+  font-size: 16px;
+  line-height: 1.5em;
+  letter-spacing: 0.04em;
+  color: #808080;
+}
+.loader-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto;
+  display: inline-block;
+  position: relative;
+}
+
+.loader::after,
+.loader::before {
+  content: '';
+  width: 48px;
+  height: 48px;
+  border: 2px solid #000000;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  animation: rotation 2s ease-in-out infinite;
+}
+
+.loader::after {
+  border-color: #ff3d00;
+  animation-delay: 1s;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+img {
+  object-fit: cover;
+  box-sizing: border-box;
+}
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.image-item {
+  width: calc((100% - 48px) / 3);
+  position: relative;
+  border: 1px solid #808080;
+  box-sizing: border-box;
+}
+.gallery-info {
+  display: flex;
+  justify-content: space-around;
+  padding: 4px 20px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: #fff;
+}
+.info-item {
+  font-weight: 600;
+  color: #2e2f42;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.info {
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}

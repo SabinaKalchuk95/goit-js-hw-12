@@ -16,3 +16,193 @@
 @import url('./badges.css');
 @import url('./back-link.css');
 @import url('./footer.css');
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  background-color: #ffff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+header {
+  background-color: #ffff;
+  padding: 24px 0;
+  text-align: center;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.search-form input {
+  padding: 10px 15px;
+  border: 1px solid #808080;
+  border-radius: 4px;
+  width: 272px;
+  height: 40px;
+  box-sizing: border-box;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+  color: #2e2f42;
+}
+
+.search-form input::placeholder {
+  color: #808080;
+}
+
+.search-form input:focus {
+  border-color: #4e75ff;
+}
+
+.search-form button {
+  background-color: #4e75ff;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  height: 40px;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.search-form button:hover {
+  background-color: #6c8cff;
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 0;
+}
+
+.gallery-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1440px;
+  box-sizing: border-box;
+}
+
+.gallery {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 32px auto;
+  width: 100%;
+  max-width: 1128px;
+}
+
+.gallery-item {
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08); /* Більш детальна тінь, схожа на макет */
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+.gallery-link {
+  display: block;
+  height: 200px;
+  overflow: hidden;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.info {
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 0;
+  background-color: #fff;
+  border-top: 1px solid #e7e9fc;
+  font-size: 12px;
+  color: #2e2f42;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info-item b {
+  font-weight: 600;
+  color: #2e2f42;
+}
+
+.loader {
+  display: none;
+  width: 48px;
+  height: 48px;
+  border: 5px solid #4e75ff;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  animation: rotation 1s linear infinite;
+  margin: 20px auto;
+}
+
+.loader.is-visible {
+  display: block;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.load-more-btn {
+  display: none;
+  background-color: #4e75ff;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 20px auto;
+  transition: background-color 0.3s ease;
+  min-width: 120px;
+  height: 40px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.load-more-btn.is-visible {
+  display: block;
+}
+
+.sl-overlay {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+}
+.sl-wrapper .sl-close {
+  color: #fff !important;
+}
+.sl-wrapper .sl-navigation button {
+  color: #fff !important;
+}

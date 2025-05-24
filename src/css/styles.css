@@ -18,29 +18,32 @@
 @import url('./footer.css');
 
 body {
-  font-family: sans-serif;
+  font-family: 'Montserrat', sans-serif;
   margin: 0;
-  background-color: #ffff;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   line-height: 1.5;
+  font-size: 16px;
+  color: #2e2f42;
 }
 
 header {
-  background-color: #ffff;
+  background-color: #ffffff;
   padding: 24px 0;
   text-align: center;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.search-form {
+.form {
   display: flex;
   justify-content: center;
   gap: 8px;
 }
 
-.search-form input {
-  padding: 10px 15px;
+.form input {
+  padding: 8px 15px;
   border: 1px solid #808080;
   border-radius: 4px;
   width: 272px;
@@ -52,29 +55,29 @@ header {
   color: #2e2f42;
 }
 
-.search-form input::placeholder {
+.form input::placeholder {
   color: #808080;
 }
 
-.search-form input:focus {
+.form input:focus {
   border-color: #4e75ff;
 }
 
-.search-form button {
+.form button {
   background-color: #4e75ff;
   color: white;
-  padding: 10px 18px;
+  padding: 10px 24px;
   border: none;
-  border-radius: 8px;
+  border-radius: 28px;
   cursor: pointer;
   height: 40px;
   box-sizing: border-box;
   transition: background-color 0.3s ease;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
 }
 
-.search-form button:hover {
+.form button:hover {
   background-color: #6c8cff;
 }
 
@@ -97,21 +100,36 @@ main {
 
 .gallery {
   display: grid;
-
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 8px;
   list-style: none;
   padding: 0;
   margin: 0 auto 32px auto;
   width: 100%;
-  max-width: 1128px;
+  max-width: 1088px;
+}
+
+@media (max-width: 1200px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    max-width: 728px;
+  }
+}
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    max-width: 360px;
+    padding: 0 16px;
+  }
 }
 
 .gallery-item {
   border-radius: 0;
   overflow: hidden;
-  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
-    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08); /* Більш детальна тінь, схожа на макет */
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   background-color: #fff;
@@ -132,25 +150,33 @@ main {
 
 .info {
   display: flex;
-  justify-content: space-around;
-  padding: 8px 0;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 8px 8px;
   background-color: #fff;
   border-top: 1px solid #e7e9fc;
   font-size: 12px;
   color: #2e2f42;
   flex-wrap: wrap;
-  gap: 4px;
+  gap: 8px;
 }
 
 .info-item {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  margin: 0;
 }
 
 .info-item b {
+  font-weight: 400;
+  color: #808080;
+  font-size: 12px;
+}
+.info-item span {
   font-weight: 600;
   color: #2e2f42;
+  font-size: 12px;
 }
 
 .loader {
@@ -195,6 +221,23 @@ main {
 
 .load-more-btn.is-visible {
   display: block;
+}
+
+.iziToast {
+  border-radius: 8px !important;
+  padding: 16px !important;
+}
+.iziToast .iziToast-icon {
+  margin-right: 8px !important;
+}
+.iziToast .iziToast-message {
+  font-size: 16px !important;
+  color: #fff !important;
+}
+.iziToast .iziToast-title {
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  color: #fff !important;
 }
 
 .sl-overlay {
